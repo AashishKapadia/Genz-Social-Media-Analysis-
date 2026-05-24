@@ -49,7 +49,7 @@ genz-social-media-analysis/
 ---
 
 ## 📊 Interactive Dashboard
-🔗 [View Live Dashboard on Tableau Public]()
+🔗 [View Live Dashboard on Tableau Public](https://public.tableau.com/views/Genz-SocialMediaAnalyzer/Story1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 ---
 
