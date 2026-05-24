@@ -36,18 +36,42 @@ The project demonstrates a full end-to-end data pipeline:
 ```
 genz-social-media-analysis/
 │
-├── data/
-│   ├── genz_social_media_usage_1M.csv      # Raw dataset (Kaggle)
-│   └── genz-social-cleaned.csv             # Cleaned dataset (output of Python script)
-│
 ├── scripts/
-│   └── genz-social.py                      # Python data cleaning script
+│   └── genz-social.py                         # Python data cleaning script
+│
+├── tableau/
+│   └── genz-social-analysis.twbx              # Tableau workbook (all 14 charts)
 │
 ├── report/
-│   └── Genz_Social_Media_Analysis_Report.pdf  # Full analysis report with all 14 visualisations
+│   └── Genz_Social_Media_Analysis_Report.pdf  # Full report with all 14 visualisations
 │
 └── README.md
 ```
+
+> ⚠️ **Note:** The raw dataset (`genz_social_media_usage_1M.csv`) is **not included** in this repository as it is 223MB in size. Please download it directly from Kaggle using the link below and run the Python script to generate the cleaned version before opening the Tableau workbook.
+
+---
+
+## 📥 Dataset Download
+
+🔗 **[Download Gen-Z Social Media Usage Dataset from Kaggle]([https://www.kaggle.com/](https://www.kaggle.com/datasets/sharmajicoder/gen-z-social-media-usage-dataset)**
+
+After downloading, place the file here before running the script:
+```
+genz-social-media-analysis/
+└── data/
+    └── genz_social_media_usage_1M.csv    ← place downloaded file here
+```
+
+---
+
+## 🗂️ How to Open the Tableau Workbook
+
+1. Download and install **[Tableau Public](https://public.tableau.com/en-us/s/download)** (free)
+2. Open `tableau/genz-social-analysis.twbx` directly in Tableau Public
+3. All **14 interactive charts** will load immediately — no data file needed separately as `.twbx` packages everything inside it
+
+> 💡 `.twbx` is a packaged Tableau workbook — it contains both the visualisations AND the cleaned data embedded inside, so viewers can open and interact with all charts directly without needing the CSV.
 
 ---
 
@@ -57,6 +81,7 @@ genz-social-media-analysis/
 |--------|-------|
 | Total Records | 1,000,000+ |
 | Columns | 14 |
+| Raw File Size | ~223 MB |
 | Countries | 7 (India, USA, Canada, UK, Germany, Brazil, Australia) |
 | Platforms | 5 (Instagram, YouTube, TikTok, Twitter, Snapchat) |
 | Null Values | 0 (after cleaning) |
@@ -88,6 +113,30 @@ df.to_csv('genz-social-cleaned.csv', index=False)
 
 ---
 
+## 🚀 How to Run
+
+1. Clone this repository:
+```cmd
+git clone https://github.com/yourusername/genz-social-media-analysis.git
+cd genz-social-media-analysis
+```
+
+2. Download the dataset from Kaggle (link above) and place it in `/data`
+
+3. Install dependencies:
+```cmd
+pip install pandas
+```
+
+4. Run the cleaning script:
+```cmd
+python scripts/genz-social.py
+```
+
+5. Open `tableau/genz-social-analysis.twbx` in Tableau Public to explore all 14 charts interactively
+
+---
+
 ## 📈 Visualisations (14 Charts in Tableau)
 
 | # | Chart Title | Chart Type | Key Finding |
@@ -101,7 +150,7 @@ df.to_csv('genz-social-cleaned.csv', index=False)
 | 7 | Avg Session Minutes by Platform | Bar Chart | Instagram highest at 7M+ minutes |
 | 8 | Screen Time Before Sleep | Bar Chart | Medium addiction group scrolls most before sleep |
 | 9 | Mental Health Score by Platform | Bar Chart | Instagram scores 2.15M — highest mental health impact |
-| 10 | Platforms Used by Gender | Treemap | Dark blue = Instagram domination for both genders |
+| 10 | Platforms Used by Gender | Treemap | Instagram dominates for both genders |
 | 11 | Daily Usage Hours by Purpose | Bar Chart | Entertainment = 14,00,000 hrs/day |
 | 12 | Addiction Level by Country | Horizontal Bar | India dominates all 3 addiction tiers |
 | 13 | Platform Preference by Country | Bubble Chart | YouTube India = single largest bubble globally |
@@ -115,7 +164,7 @@ df.to_csv('genz-social-cleaned.csv', index=False)
 India leads every metric — users (3,50,321), night usage (3,50,000), and all addiction tiers. With growing internet penetration and a massive Gen Z population, India will shape global social media trends for the coming decade.
 
 ### 2. 📸 Instagram Dominates — But YouTube Rules India
-Globally, Instagram leads in users, session time (7L+ mins), and mental health scores (2.15M). However, YouTube India is the single largest country-platform bubble in the entire dataset — video content has overtaken image-social for Indian Gen Z.
+Globally, Instagram leads in users, session time (7L+ mins), and mental health scores (2.15M). However, YouTube India is the single largest country-platform bubble in the dataset — video content has overtaken image-social for Indian Gen Z.
 
 ### 3. 🎮 Entertainment Dominates, But Education Is Surprisingly Strong
 Entertainment commands 14 lakh daily hours — 1.6× more than Socializing. Yet Education at 7 lakh daily hours nearly matches Socializing (8.8L), showing Gen Z also uses social media as a genuine learning tool.
@@ -141,37 +190,6 @@ Across all platforms, the Female/Male split stays within 0.1–0.3% of each othe
 | Top Purpose | Entertainment — 14,00,000 hrs/day |
 | Avg Daily Usage | 3.51 hours |
 | Countries Covered | 7 |
-
----
-
-## 🚀 How to Run
-
-1. Clone this repository:
-```cmd
-git clone https://github.com/yourusername/genz-social-media-analysis.git
-cd genz-social-media-analysis
-```
-
-2. Install dependencies:
-```cmd
-pip install pandas
-```
-
-3. Run the cleaning script:
-```cmd
-python scripts/genz-social.py
-```
-
-4. Open the cleaned CSV in Tableau Public to explore the visualisations, or refer to the PDF report for all 14 pre-built charts.
-
----
-
-## 📁 Dataset Source
-
-- **Platform:** [Kaggle](https://www.kaggle.com/)
-- **Dataset:** Gen-Z Social Media Usage Dataset
-- **Records:** 1,000,000+
-- **Columns:** 14 (User ID, Country, Platform, Gender, Addiction Level, Purpose, Daily Usage Hours, Night Usage, Mental Health Score, Session Minutes, Age, etc.)
 
 ---
 
