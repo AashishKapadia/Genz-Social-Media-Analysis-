@@ -38,10 +38,6 @@ genz-social-media-analysis/
 │
 ├── scripts/
 │   └── genz-social.py                         # Python data cleaning script
-│
-├── tableau/
-│   └── genz-social-analysis.twbx              # Tableau workbook (all 14 charts)
-│
 ├── report/
 │   └── Genz_Social_Media_Analysis_Report.pdf  # Full report with all 14 visualisations
 │
@@ -49,6 +45,11 @@ genz-social-media-analysis/
 ```
 
 > ⚠️ **Note:** The raw dataset (`genz_social_media_usage_1M.csv`) is **not included** in this repository as it is 223MB in size. Please download it directly from Kaggle using the link below and run the Python script to generate the cleaned version before opening the Tableau workbook.
+
+---
+
+## 📊 Interactive Dashboard
+🔗 [View Live Dashboard on Tableau Public]()
 
 ---
 
